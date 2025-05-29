@@ -1,5 +1,6 @@
 
 import streamlit as st
+import datetime
 
 st.set_page_config(page_title="Simpson Strong-Tie Outreach Generator", layout="centered")
 
@@ -12,7 +13,27 @@ structure = st.selectbox("Structure Type", ["Concrete and Timber", "Concrete Onl
 stories = st.selectbox("Building Height", ["1–2 Story", "3–4 Story", "5+ Story"])
 timeframe = st.text_input("Construction Timeline", "2024–2026")
 
-# Button to generate
+# AI Agent Simulation for Project Status & Stakeholders
+st.markdown("---")
+st.subheader("🔍 AI Project Intel Agent")
+
+if st.button("Check Project Status & Stakeholders"):
+    # Simulated AI-generated summary
+    latest_status = "Permitting phase – approved site plan; awaiting general contractor assignment"
+    stakeholders = [
+        "Developer: FBK Development GmbH",
+        "Architecture Firm: TBD – local shortlisting in progress",
+        "Structural Engineer: Ingenieurgesellschaft XY (past collaboration)"
+    ]
+
+    st.success("✅ Project Intel Retrieved")
+    st.markdown(f"**Latest Status:** {latest_status}")
+    st.markdown("**Stakeholders:**")
+    for s in stakeholders:
+        st.markdown(f"- {s}")
+
+# Button to generate outreach assets
+st.markdown("---")
 if st.button("Generate Outreach Assets"):
     # Generate dynamic text content
     email = f"""
